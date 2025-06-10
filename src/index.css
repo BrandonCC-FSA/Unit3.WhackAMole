@@ -1,9 +1,90 @@
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-screen,
+.game-screen {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #2d3a4b;
+  margin-bottom: 16px;
+}
+
+p {
+  color: #4b5d6b;
+  margin-bottom: 24px;
+}
+
+button {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 12px;
+}
+
+button:hover {
+  background: #3461b2;
+}
+
+.score {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2d3a4b;
+  margin-bottom: 18px;
+}
+
+.holes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 12px;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+}
 
 .hole {
-  background: url("/hole.png") no-repeat center/contain;
+  width: 100px;
+  height: 100px;
+  background-image: url("/hole.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 10px;
 }
 
 .mole {
+  width: 80px;
+  height: 80px;
   background-image: url("/mole.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  transition: transform 0.1s;
 }
 
+.mole:active {
+  transform: scale(0.92);
+}
