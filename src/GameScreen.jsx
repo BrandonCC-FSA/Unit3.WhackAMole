@@ -1,14 +1,13 @@
-import { useGame } from "./GameContext.jsx"; // Import context hook
-import Holes from "./Holes.jsx"; // Import Holes component
+import { useGame } from "./GameContext.jsx";
+import Holes from "./Holes.jsx";
 
-export default function GameScreen() { // Define GameScreen component
-  const { score, restartGame } = useGame(); // Get score and restart function
-
+export default function GameScreen() {
+  const { score, restartGame } = useGame();
   return (
     <div className="game-screen">
-      <div className="score">Score: {score}</div> {/* Display current score */}
-      <button onClick={restartGame}>Restart</button> {/* Restart button */}
-      <Holes /> {/* Render the holes grid */}
+      <div className="score">Score: {score}</div>
+      <button onClick={restartGame}>Restart</button>
+      <Holes />
     </div>
   );
 }
